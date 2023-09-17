@@ -1,0 +1,105 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans&family=PT+Sans:wght@400;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(to bottom right, #9f28e4, #282bd8);
+  width: 100%;
+  height: 100vh;
+  color: white;
+  font-family: "PT Sans", sans-serif;
+  user-select: none;
+  position: relative;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-container {
+  position: absolute;
+  z-index: 1;
+  top: 25vh;
+  left: 2%;
+}
+
+#headline {
+  height: 15vh;
+  min-height: 100px;
+  width: 45vw;
+  min-width: 300px;
+  font-size: calc(30px + 10 * (100vw - 300px) / 900);
+}
+
+#container {
+  height: 15vh;
+  min-height: 100px;
+  width: 45vw;
+  min-width: 300px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.mesure {
+  height: 20%;
+  width: 25%;
+  font-size: calc(12px + 7.5 * (100vw - 300px) / 900);
+}
+
+.date {
+  height: 80%;
+  width: 25%;
+  font-size: calc(30px + 20 * (100vw - 300px) / 900);
+}
+
+/* bubbles */
+
+@keyframes animate {
+  0% {
+    transform: translateY(100vh) scale(0);
+  }
+  100% {
+    transform: translateY(-10vh) scale(1);
+  }
+}
+
+.bubbles-container {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  position: absolute;
+  z-index: -100;
+}
+
+.bubbles {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.bubbles span {
+  width: 30px;
+  height: 30px;
+  background: #4fc3dc;
+  margin: 0 4px;
+  border-radius: 50%;
+  box-shadow: 0 0 0 10px #4fc3fc44, 0 0 50px #4fc3dc, 0 0 100px #4fc3dc;
+  animation: animate 15s linear infinite;
+  animation-duration: calc(125s / var(--i));
+  z-index: -100;
+}
+
+.bubbles span:nth-child(even) {
+  background: #ff2d75;
+  box-shadow: 0 0 0 10px #ff2d7544, 0 0 50px #ff2d75, 0 0 100px #ff2d75;
+}
